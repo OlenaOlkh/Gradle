@@ -1,0 +1,30 @@
+buildscript {
+    ext {
+        selenideVersion = '7.3.1'
+        cucumberVersion = '7.15.0'
+    }
+}
+
+group = 'com.epam'
+version = '1.0.0'
+
+dependencies {
+    implementation "io.cucumber:cucumber-java:$cucumberVersion"
+    implementation "io.cucumber:cucumber-testng:$cucumberVersion"
+    implementation 'io.cucumber:datatable-dependencies:3.0.0'
+
+    implementation "com.codeborne:selenide:$selenideVersion"
+}
+
+task cucumber(type: Test) {
+    useTestNG()
+
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+
+    include '**/CucumberTestRunner.class'
+}
+
+task runUiTests(type: Test) {
+    dependsOn ':tests-ui:cucumber'
+}

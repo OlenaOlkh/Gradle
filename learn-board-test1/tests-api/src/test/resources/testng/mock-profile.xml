@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Learn-board API test suite">
+    <parameter name="apiBaseUrl" value="${base.url}" />
+    <parameter name="jdbcURL" value="jdbc:postgresql://learn-board-dev.petersburg.epam.com:5432/LB_DEV" />
+    <test name="API test (mock)">
+        <classes>
+            <class name="com.at.event_tests.EventServiceTests" />
+            <class name="com.at.event_tests.EventServiceSimpleTests" />
+        </classes>
+    </test>
+</suite>

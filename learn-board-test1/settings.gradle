@@ -1,0 +1,4 @@
+rootProject.name = 'learn-board-test'
+
+include 'tests-api'
+include 'tests-ui'

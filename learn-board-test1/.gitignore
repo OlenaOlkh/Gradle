@@ -1,0 +1,15 @@
+build
+out
+reports
+.idea
+.gradle
+debug.log
+trace.log
+*.iml
+configuration.properties
+/build
+/out
+visual-tool/server/package-lock.json
+reportportal.lock
+reportportal.sync
+!.gitlab/*
